@@ -88,6 +88,8 @@ class _API(object):
         # TODO - Clean this up (might not need separate returns)
         if request_type=='artist-songs':
             return self._API_URL + 'artists/' + quote(request_term) + '/songs?per_page=50&page=' + str(page)
+        elif request_type=='search':
+            return self._API_URL + 'search/?per_page=50&q=' + quote(request_term)
         else:        
             return self._API_URL + self._API_REQUEST_TYPES[request_type] + quote(request_term)
     
